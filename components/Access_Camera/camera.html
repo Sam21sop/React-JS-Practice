@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camera</title>
+  </head>
+  <body>
+    <div class="box">
+        <video id="video" autoplay></video>
+        <button onclick="openCamera()">Open Camera</button>
+        <button onclick="closeCamera()">close Camera</button>
+    </div>
+
+    <!-- Script -->
+    <script>
+        let stream;
+        async function openCamera(){
+            stream = await navigator.mediaDevices.getUserMedia({video:true});
+            console.log(stream);
+            video.srcObject = stream;
+        };
+
+        function closeCamera(){
+            // const stream = await navigator.mediaDevices.getUserMedia({video:true});
+            if(stream){
+              const tracks = stream.getTracks();
+              tracks.forEach(track => {track.stop();});
+              video.srcObject = null
+            }
+        }
+    </script>
+  </body>
+</html>
