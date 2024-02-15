@@ -1,0 +1,25 @@
+body{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    align-content: center;
+    text-align:center;
+}
+
+#source{
+    margin: 10px;
+    padding: 10px;
+    width: 20%;
+    border: 2px red dashed;
+    border-radius: 5px;
+}
+
+#destination{
+    margin: 10px;
+    padding: 10px;
+    width: 25%;
+    height: auto;
+    border: 2px rgb(14, 243, 45) dashed;
+    border-radius: 5px;
+}

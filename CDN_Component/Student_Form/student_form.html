@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSX</title>
+
+
+
+    <!-- Add react CDN link -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Add javascript compiler babel cdn link -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root">
+        <!-- parent Element -->
+    </div>
+
+
+
+ 
+    <script type="text/babel"> 
+
+        let studentData = {name:null, marks:null}
+
+        // student form
+        const StudentForm = () => (
+            <>
+                <form>
+                    <input placeholder="Name" />
+                    <input placeholder="Mark"/>
+                    <button>Submit</button>
+                </form>
+            </>
+        )
+
+        // student data table
+        const StudentTable = () => (
+            <>
+                <table border="1px">
+                <thead>
+                    <tr>
+                    <th>Student's Name</th>
+                    <th>Marks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{studentData.name}</td>
+                        <td>{studentData.marks}</td>
+                    </tr>
+                </tbody>
+                </table>
+            </>
+        )
+
+
+        // handle submit event
+        function submitHandle(event) {
+            event.preventDefault();
+
+        }
+
+
+        const App = () => {
+
+
+            return (
+            <>
+                <h1>Student' Form</h1>
+                <StudentForm/>
+                <br/>
+                <StudentTable/>
+            </>
+            );
+        };
+
+        const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+        rootElement.render(<App />);
+    </script>
+</body>
+</html>
