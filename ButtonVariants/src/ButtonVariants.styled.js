@@ -10,11 +10,11 @@ export const ButtonView = styled.button`
   
   /* Conditional styles based on props */
   ${(props) =>
-    props.filled &&
+    (props.filled &&
     `
       background-color: ${props.bg || 'inherit'};
       color: ${props.color || 'inherit'};
       border: none;
-    `
+    `)
   }
 `;
